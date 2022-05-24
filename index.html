@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #train {
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        #a1 {
+            width: 50px;
+            height: 50px;
+        }
+        
+        #a11a {
+            height: 28px;
+            position: relative;
+            display: none;
+            width: 510px;
+            left: -250px;
+        }
+        
+        .a11a {
+            height: 28px;
+            position: relative;
+            display: none;
+        }
+
+        .aa {
+            display: flex;
+            width: 800px;
+            height: 150px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #A11{
+            position: absolute;
+            right: 300px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aa">
+        <div id="a11a">
+            <input type="text" maxlength="21" placeholder="Поиск" class="searchbar" id="A11">
+        </div>
+        <div id="train">
+            <img id="a1" src="a1.png">
+        </div>
+    </div>
+
+
+
+
+    <script>
+        train.onclick = function() {
+            var el = document.getElementById("train");
+
+
+            a11a.style.display = 'block';
+            var start = Date.now();
+            var image = document.getElementById('a1');
+                var src = image.src.split('/');
+                var src1 = src.pop();
+                
+            var timer = setInterval(function() {
+                var timePassed = Date.now() - start;
+                if(src1 == "a5.png") {
+                    image.src = "a1.png";
+                    A11.style.left = timePassed / 15 + 350 + 'px';
+                    A11.style.width = 50 + (timePassed / (38)) + 'px';
+                    if (timePassed > 1300){
+                        a11a.style.display = 'none';
+                        A11.style.left = 'auto';
+                    };
+                }else{
+                    image.src = "a5.png";
+                    a11a.style.display = 'block';
+                    A11.style.right = timePassed / 35 + 'px';
+                    A11.style.width = timePassed / 19 + 'px';
+                }
+                if (timePassed > 2000) clearInterval(timer);
+            }, 20);
+
+                // console.log(image.src);
+        }
+        
+
+        // function aaaaa(){
+        //     var image = document.getElementById('a1');
+        //     var src = image.src.split('/');
+        //     var src1 = src.pop();
+        //     // console.log(image.src);
+            
+        //     if(src1 == "a5.png") {
+        //         image.src = "a1.png";
+        //     }else{
+        //         image.src = "a5.png";
+        //     }
+
+            // a11a.style.display = 'none';
+            // var timer = setInterval(function() {
+            //     var timePassed = Date.now() - start;
+
+            //     a11a.style.right = timePassed / 19 + 'px';
+            //     a11a.style.display = 'none';
+            //     train.style.left = 'px';
+            //     A11.style.width = timePassed / 10 + 'px';
+            //     if (timePassed > 2000) clearInterval(timer);
+            //     if (timePassed > 2000){
+            //     };
+            // }, 20);
+
+        
+    </script>
+
+
+</body>
+
+</html>
